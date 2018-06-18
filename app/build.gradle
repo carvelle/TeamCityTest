@@ -8,7 +8,7 @@ android {
         targetSdkVersion 27
         versionCode 1
         versionName "1.0"
-        if (hasProperty("teamcity")) {
+        if (this.hasProperty("teamcity")) {
             version = teamcity["build.number"]
             setProperty("archivesBaseName", "TCT-Build-teamcity[\"build.number\"]")
         } else {
