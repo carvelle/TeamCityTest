@@ -10,7 +10,7 @@ android {
         versionName "1.0"
         if (this.hasProperty("teamcity")) {
             version = teamcity["build.number"]
-            setProperty("archivesBaseName", "TCT-Build-".teamcity["build.number"])
+            setProperty("archivesBaseName", teamcity["build.number"])
         } else {
             version = '0.0-beta'
         }
