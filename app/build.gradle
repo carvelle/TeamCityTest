@@ -8,6 +8,13 @@ android {
         targetSdkVersion 27
         versionCode 1
         versionName "1.0"
+        if (hasProperty("teamcity")) {
+            version = teamcity["build.number"]
+            setProperty("archivesBaseName", "TCT-Build-teamcity[\"build.number\"]")
+        } else {
+            version = '0.0-beta'
+        }
+
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     signingConfigs {
